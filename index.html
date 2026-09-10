@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>zooskool在线播放 - 视频内容分类浏览与在线观看参考指南</title>
+<meta name="description" content="zooskool在线播放页面，提供视频内容分类浏览、在线播放常识、观看方式说明与常见问题解答，帮助用户了解如何安全、顺畅地浏览和观看相关视频内容。">
+<meta name="keywords" content="zooskool在线播放,视频在线观看,内容分类,播放指南,在线播放常见问题">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+:root{
+  --bg:#0d0f14;
+  --bg-soft:#141821;
+  --panel:#1b202b;
+  --panel-2:#222836;
+  --line:#2c3444;
+  --text:#e8ebf2;
+  --text-dim:#9aa4b6;
+  --accent:#ff5a5f;
+  --accent-2:#ffb648;
+  --radius:14px;
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,-apple-system,"Segoe UI",sans-serif;
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 20px}
+
+/* 顶部 */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(13,15,20,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:18px;height:66px;
+}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:19px;letter-spacing:.5px}
+.logo-mark{
+  width:32px;height:32px;border-radius:9px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  display:grid;place-items:center;font-size:15px;color:#1a1208;font-weight:800;
+}
+.logo span.sub{font-size:12px;color:var(--text-dim);font-weight:400;letter-spacing:0}
+.main-nav{display:flex;gap:6px;flex-wrap:wrap}
+.main-nav a{
+  padding:8px 14px;border-radius:9px;font-size:14.5px;color:var(--text-dim);
+  transition:.2s;
+}
+.main-nav a:hover,.main-nav a.active{background:var(--panel-2);color:var(--text)}
+.header-cta{
+  padding:9px 18px;border-radius:10px;font-size:14px;font-weight:600;
+  background:linear-gradient(135deg,var(--accent),#ff7a4d);color:#fff;
+  white-space:nowrap;
+}
+
+/* 首屏 */
+.hero{
+  position:relative;padding:64px 0 54px;
+  background:
+    radial-gradient(900px 420px at 12% -10%,rgba(255,90,95,.20),transparent 60%),
+    radial-gradient(700px 380px at 88% 0%,rgba(255,182,72,.14),transparent 62%),
+    var(--bg-soft);
+  border-bottom:1px solid var(--line);
+}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+.hero h1{font-size:38px;line-height:1.3;letter-spacing:.5px;margin-bottom:16px}
+.hero h1 em{
+  font-style:normal;
+  background:linear-gradient(120deg,var(--accent),var(--accent-2));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p.lead{color:var(--text-dim);font-size:16.5px;max-width:640px;margin-bottom:24px}
+.hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+.tag{
+  font-size:13px;padding:6px 13px;border-radius:999px;
+  background:var(--panel);border:1px solid var(--line);color:var(--text-dim);
+}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+  display:inline-block;padding:12px 24px;border-radius:11px;font-size:15px;font-weight:600;
+  transition:.22s;border:1px solid transparent;cursor:pointer;
+}
+.btn-primary{background:linear-gradient(135deg,var(--accent),#ff7a4d);color:#fff;box-shadow:0 8px 22px rgba(255,90,95,.28)}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-ghost{background:var(--panel);border-color:var(--line);color:var(--text)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+.player-card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px;box-shadow:var(--shadow);
+}
+.player-screen{
+  position:relative;border-radius:10px;overflow:hidden;
+  background:linear-gradient(135deg,#20263a,#12151d);
+  aspect-ratio:16/9;display:grid;place-items:center;border:1px solid var(--line);
+}
+.player-screen::after{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 45%,rgba(255,90,95,.18),transparent 62%);
+}
+.play-btn{
+  position:relative;z-index:2;width:64px;height:64px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  display:grid;place-items:center;color:#1a1208;font-size:22px;font-weight:800;
+  box-shadow:0 10px 24px rgba(255,90,95,.35);
+}
+.player-meta{display:flex;justify-content:space-between;align-items:center;margin-top:14px;gap:12px}
+.player-meta strong{font-size:15px}
+.player-meta span{font-size:12.5px;color:var(--text-dim)}
+.progress{height:5px;border-radius:99px;background:var(--panel-2);margin-top:12px;overflow:hidden}
+.progress i{display:block;height:100%;width:42%;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+
+/* 通用区块 */
+.section{padding:58px 0}
+.section.alt{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.section-head{margin-bottom:30px;max-width:760px}
+.section-head .kicker{
+  font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);font-weight:700;
+  display:block;margin-bottom:8px;
+}
+.section-head h2{font-size:26px;line-height:1.4;margin-bottom:10px}
+.section-head p{color:var(--text-dim);font-size:15.5px}
+
+/* 分类卡 */
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cat-card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px;transition:.22s;
+}
+.cat-card:hover{transform:translateY(-4px);border-color:rgba(255,90,95,.5)}
+.cat-icon{
+  width:40px;height:40px;border-radius:10px;display:grid;place-items:center;
+  background:var(--panel-2);font-size:18px;margin-bottom:14px;color:var(--accent-2);
+}
+.cat-card h3{font-size:16.5px;margin-bottom:8px}
+.cat-card p{font-size:14px;color:var(--text-dim)}
+
+/* 列表 */
+.list-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.list-item{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px;display:flex;flex-direction:column;gap:10px;transition:.22s;
+}
+.list-item:hover{border-color:rgba(255,182,72,.45);transform:translateY(-3px)}
+.list-item .num{
+  font-size:13px;font-weight:700;color:var(--accent);letter-spacing:1px;
+}
+.list-item h3{font-size:16.5px}
+.list-item p{font-size:14px;color:var(--text-dim);flex:1}
+.list-item .meta{font-size:12.5px;color:#6f7a8d;border-top:1px solid var(--line);padding-top:10px}
+
+/* 指南步骤 */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:step}
+.step{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:24px;
+  position:relative;
+}
+.step::before{
+  counter-increment:step;content:"0" counter(step);
+  font-size:26px;font-weight:800;color:rgba(255,90,95,.35);display:block;margin-bottom:10px;
+}
+.step h3{font-size:16.5px;margin-bottom:8px}
+.step p{font-size:14px;color:var(--text-dim)}
+
+/* 内容文章区 */
+.article-layout{display:grid;grid-template-columns:1fr 300px;gap:34px;align-items:start}
+.prose h3{font-size:19px;margin:26px 0 10px}
+.prose h3:first-child{margin-top:0}
+.prose p{color:#c3cad8;font-size:15.5px;margin-bottom:14px}
+.prose ul{margin:0 0 16px 20px;color:#c3cad8;font-size:15.5px}
+.prose li{margin-bottom:8px}
+.note{
+  background:var(--panel);border-left:3px solid var(--accent-2);
+  border-radius:0 10px 10px 0;padding:16px 18px;font-size:14.5px;color:var(--text-dim);
+  margin:20px 0;
+}
+.aside-card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px;margin-bottom:18px;
+}
+.aside-card h3{font-size:16px;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.aside-card ul{list-style:none}
+.aside-card li{
+  font-size:14px;color:var(--text-dim);padding:8px 0;border-bottom:1px dashed var(--line);
+}
+.aside-card li:last-child{border-bottom:none}
+.aside-card li a:hover{color:var(--accent)}
+
+/* FAQ */
+.faq-list{display:grid;gap:12px;max-width:900px}
+.faq-item{
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 22px;
+}
+.faq-item h3{font-size:16px;margin-bottom:8px;display:flex;gap:10px;align-items:flex-start}
+.faq-item h3::before{content:"Q";color:var(--accent);font-weight:800;flex-shrink:0}
+.faq-item p{font-size:14.5px;color:var(--text-dim);padding-left:24px}
+
+/* 页脚 */
+.site-footer{
+  background:#0a0c11;border-top:1px solid var(--line);padding:44px 0 26px;margin-top:10px;
+}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px;margin-bottom:30px}
+.footer-grid h4{font-size:15px;margin-bottom:14px}
+.footer-grid p{font-size:13.5px;color:var(--text-dim);max-width:320px}
+.footer-grid ul{list-style:none}
+.footer-grid li{margin-bottom:9px}
+.footer-grid li a{font-size:13.5px;color:var(--text-dim);transition:.2s}
+.footer-grid li a:hover{color:var(--accent)}
+.footer-bottom{
+  border-top:1px solid var(--line);padding-top:20px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:13px;color:#6f7a8d;
+}
+
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:32px}
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
+  .list-grid{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:1fr}
+  .article-layout{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .main-nav{display:none}
+}
+@media (max-width:600px){
+  body{font-size:15px}
+  .hero{padding:44px 0 40px}
+  .hero h1{font-size:27px}
+  .section{padding:44px 0}
+  .section-head h2{font-size:22px}
+  .cat-grid,.list-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .header-cta{padding:8px 13px;font-size:13px}
+  .logo span.sub{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="#top">
+      <span class="logo-mark">Z</span>
+      <span>zooskool<span class="sub"> 在线播放参考站</span></span>
+    </a>
+    <nav class="main-nav" aria-label="主导航">
+      <a href="#top" class="active">首页</a>
+      <a href="#category">内容分类</a>
+      <a href="#guide">播放指南</a>
+      <a href="#knowledge">观看常识</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <a class="header-cta" href="#guide">查看播放说明</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>zooskool在线播放：<em>分类浏览与在线观看方式说明</em></h1>
+        <p class="lead">
+          很多人搜索“zooskool在线播放”，通常是想知道这类视频内容在哪里浏览、以什么方式在线观看、观看时需要注意哪些问题。
+          本页围绕内容分类、播放方式、网络与设备条件、访问注意事项等角度做系统整理，帮助你在浏览前建立清晰的认知，减少无效尝试。
+        </p>
+        <div class="hero-tags">
+          <span class="tag">内容分类浏览</span>
+          <span class="tag">在线播放方式</span>
+          <span class="tag">设备与网络条件</span>
+          <span class="tag">观看注意事项</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#category">浏览内容分类</a>
+          <a class="btn btn-ghost" href="#faq">查看常见问题</a>
+        </div>
+      </div>
+
+      <div class="player-card">
+        <div class="player-screen">
+          <div class="play-btn" aria-hidden="true">▶</div>
+        </div>
+        <div class="player-meta">
+          <strong>在线播放示意面板</strong>
+          <span>示意界面 · 非真实播放源</span>
+        </div>
+        <div class="progress"><i></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 内容分类 -->
+  <section class="section" id="category">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Content Categories</span>
+        <h2>按内容方向划分的浏览入口</h2>
+        <p>不同用户关注的方向差异较大，先把内容按常见维度做归类，有助于快速判断自己需要的是哪一类，而不是盲目点击。</p>
+      </div>
+
+      <div class="cat-grid">
+        <article class="cat-card">
+          <div class="cat-icon">◈</div>
+          <h3>综合视频合集</h3>
+          <p>以合集或系列形式组织的内容，通常按主题、时间或编号排列，适合按顺序连续浏览。</p>
+        </article>
+        <article class="cat-card">
+          <div class="cat-icon">◉</div>
+          <h3>短片与片段</h3>
+          <p>时长较短的独立片段，单个文件体积小，加载速度快，适合碎片时间观看。</p>
+        </article>
+        <article class="cat-card">
+          <div class="cat-icon">▣</div>
+          <h3>主题分类内容</h3>
+          <p>按照题材、风格或场景划分的条目，便于在同一类别内做横向比较和筛选。</p>
+        </article>
+        <article class="cat-card">
+          <div class="cat-icon">◇</div>
+          <h3>往期内容归档</h3>
+          <p>较早发布、已进入归档区的内容，一般需要通过列表翻页或检索方式定位。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 推荐列表 -->
+  <section class="section alt" id="guide">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Playback Guide</span>
+        <h2>在线播放的基本流程与条件准备</h2>
+        <p>在线播放能否顺畅，主要取决于三件事：访问入口是否可用、网络带宽是否足够、播放设备与浏览器是否兼容。下面按顺序说明。</p>
+      </div>
+
+      <div class="steps">
+        <article class="step">
+          <h3>确认访问入口</h3>
+          <p>先明确自己要访问的是哪个站点或平台。不同入口的域名、页面结构差异很大，建议通过可信来源获取地址，避免点击来源不明的短链或弹窗跳转。</p>
+        </article>
+        <article class="step">
+          <h3>检查网络与带宽</h3>
+          <p>视频播放对下行带宽有基本要求。若画面频繁缓冲，可先测试网络速度，或切换到更稳定的网络环境，再重新加载页面。</p>
+        </article>
+        <article class="step">
+          <h3>选择兼容的浏览器</h3>
+          <p>主流浏览器的新版本通常对视频解码支持较好。若出现黑屏、只有声音无画面等情况，可尝试更换浏览器或关闭影响播放的扩展插件。</p>
+        </article>
+      </div>
+
+      <div class="list-grid" style="margin-top:34px">
+        <article class="list-item">
+          <span class="num">要点 01</span>
+          <h3>播放前先看页面说明</h3>
+          <p>正规页面一般会标注内容简介、时长、清晰度选项等信息。先读说明再点击播放，能减少误入无关页面的情况。</p>
+          <div class="meta">浏览效率 · 信息核对</div>
+        </article>
+        <article class="list-item">
+          <span class="num">要点 02</span>
+          <h3>清晰度与加载速度的取舍</h3>
+          <p>高清晰度需要更高带宽。网络一般时，可先选择中等清晰度保证流畅，再根据实际表现手动调整。</p>
+          <div class="meta">画质设置 · 流畅优先</div>
+        </article>
+        <article class="list-item">
+          <span class="num">要点 03</span>
+          <h3>移动端与桌面端差异</h3>
+          <p>手机端通常自动适配竖屏或横屏播放，桌面端则更多依赖浏览器解码能力。同一内容在不同设备上的表现可能不同。</p>
+          <div class="meta">设备适配 · 跨端体验</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 常识文章 -->
+  <section class="section" id="knowledge">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Viewing Notes</span>
+        <h2>关于在线播放，需要提前了解的几点</h2>
+        <p>以下内容不针对任何具体站点，而是对“在线播放”这一类使用场景的通用说明，适用于大多数视频浏览需求。</p>
+      </div>
+
+      <div class="article-layout">
+        <div class="prose">
+          <h3>在线播放与下载播放的区别</h3>
+          <p>
+            在线播放指边加载边观看，视频数据通过流式传输方式送达播放器，不需要把完整文件保存到本地；下载播放则需要先把文件存储到设备上再打开。
+            在线播放的优势是即时、不占存储空间，但对网络稳定性更敏感；下载播放对网络波动容忍度更高，但会占用设备容量，并且需要等待下载完成。
+          </p>
+
+          <h3>为什么会出现缓冲、卡顿或加载失败</h3>
+          <p>常见的播放异常，多数可以归到以下几类原因：</p>
+          <ul>
+            <li><strong>带宽不足：</strong>当前网络下行速度低于视频码率要求，播放器只能不断等待数据。</li>
+            <li><strong>网络抖动：</strong>信号不稳定导致数据包丢失，表现为画面停顿、音画不同步。</li>
+            <li><strong>浏览器兼容问题：</strong>部分编码格式在旧版本浏览器中无法解码。</li>
+            <li><strong>页面本身不可用：</strong>入口地址失效、页面结构变更或资源已被移除。</li>
+          </ul>
+          <div class="note">
+            排查顺序建议为：先换网络 → 再换浏览器 → 最后确认入口是否仍然有效。按这个顺序处理，通常能快速定位问题所在。
+          </div>
+
+          <h3>浏览时的安全与隐私习惯</h3>
+          <p>
+            视频类页面中，来源不明的弹窗、诱导下载按钮和伪装成播放键的广告较为常见。较为稳妥的做法是：不随意点击页面上的悬浮广告，
+            不为观看内容安装来源不明的“专用播放器”或“解码插件”，不在非必要情况下提交手机号、邮箱等个人信息。
+            如果浏览器提示页面存在风险，应优先相信提示并退出。
+          </p>
+
+          <h3>如何判断一个页面是否值得停留</h3>
+          <p>
+            可以从几个细节判断：页面结构是否清晰、是否有明确的内容说明、是否频繁弹出新窗口、是否强制要求下载软件。
+            结构清晰、说明完整、不强制跳转的页面，通常使用体验更稳定；反之则应尽快离开，避免设备被安装不需要的程序。
+          </p>
+
+          <h3>内容合规的基本认知</h3>
+          <p>
+            不同国家和地区对视频内容的传播与观看有不同的法律规定。使用任何在线播放服务前，应先确认所在地的相关要求，
+            并选择合法合规的内容来源。对于无法确认来源与授权状态的内容，建议不要传播、不要分享链接。
+          </p>
+        </div>
+
+        <aside>
+          <div class="aside-card">
+            <h3>快速自查清单</h3>
+            <ul>
+              <li>网络速度是否满足播放要求</li>
+              <li>浏览器是否为较新版本</li>
+              <li>是否误点了悬浮广告</li>
+              <li>页面是否要求下载额外软件</li>
+              <li>入口地址是否仍然有效</li>
+            </ul>
+          </div>
+          <div class="aside-card">
+            <h3>相关浏览方向</h3>
+            <ul>
+              <li><a href="#category">内容分类入口</a></li>
+              <li><a href="#guide">播放流程说明</a></li>
+              <li><a href="#faq">常见问题解答</a></li>
+            </ul>
+          </div>
+          <div class="aside-card">
+            <h3>设备建议</h3>
+            <ul>
+              <li>桌面端：主流浏览器最新版</li>
+              <li>移动端：系统自带或主流浏览器</li>
+              <li>网络：优先使用稳定 Wi-Fi</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section alt" id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">FAQ</span>
+        <h2>zooskool在线播放相关常见问题</h2>
+        <p>以下问题来自搜索这类关键词时最常出现的疑问，回答以通用经验为主，不涉及任何具体站点的承诺。</p>
+      </div>
+
+      <div class="faq-list">
+        <article class="faq-item">
+          <h3>zooskool在线播放指的是什么？</h3>
+          <p>它是用户对一类视频内容在线观看需求的描述方式。搜索者通常希望找到可以边加载边观看的页面，而不需要先下载完整文件。具体指向的站点或平台会随时间和来源变化，因此本页不针对单一地址做说明。</p>
+        </article>
+        <article class="faq-item">
+          <h3>为什么打开后一直加载不出来？</h3>
+          <p>常见原因是网络速度不足、入口地址已失效，或浏览器对页面使用的视频格式支持不佳。可以先更换网络环境，再更换浏览器重试，若仍无法加载，则很可能是入口本身已不可用。</p>
+        </article>
+        <article class="faq-item">
+          <h3>观看这类内容需要安装额外软件吗？</h3>
+          <p>正常情况下不需要。主流浏览器已具备常见的视频解码能力。如果页面反复提示安装“专用播放器”“解码器”或要求下载可执行文件，建议直接关闭页面，不要安装来源不明的程序。</p>
+        </article>
+        <article class="faq-item">
+          <h3>手机上能正常播放吗？</h3>
+          <p>大多数页面会针对移动端做适配。能否顺利播放主要取决于移动网络稳定性和浏览器版本。若手机端表现不佳，可尝试切换到 Wi-Fi 或更换浏览器。</p>
+        </article>
+        <article class="faq-item">
+          <h3>页面弹出很多新窗口怎么办？</h3>
+          <p>这通常说明页面含有较多广告或跳转脚本。建议直接关闭全部新窗口并退出该页面，同时可在浏览器中开启弹窗拦截功能，避免后续再次遇到同类情况。</p>
+        </article>
+        <article class="faq-item">
+          <h3>观看时需要注意哪些合规问题？</h3>
+          <p>应遵守所在地的法律法规，选择合法合规的内容来源，不传播、不分享来源不明或未经授权的内容。对于无法确认授权状态的内容，建议不要观看和转发。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>关于本站</h4>
+        <p>本页面围绕“zooskool在线播放”这一搜索需求，整理内容分类、播放方式、设备条件与注意事项等通用信息，帮助用户在浏览前建立基本判断。</p>
+      </div>
+      <div>
+        <h4>页面导航</h4>
+        <ul>
+          <li><a href="#top">首页</a></li>
+          <li><a href="#category">内容分类</a></li>
+          <li><a href="#guide">播放指南</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>使用提示</h4>
+        <ul>
+          <li>优先选择稳定网络</li>
+          <li>不安装来源不明软件</li>
+          <li>开启浏览器弹窗拦截</li>
+          <li>遵守当地法律法规</li>
+        </ul>
+      </div>
+      <div>
+        <h4>内容说明</h4>
+        <ul>
+          <li>页面内容为通用整理</li>
+          <li>不针对特定站点背书</li>
+          <li>相关信息以实际页面为准</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>zooskool在线播放 · 内容分类与播放方式参考</span>
+      <span>请遵守所在地法律法规，合理安排观看时间</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var links = document.querySelectorAll('.main-nav a');
+  var sections = [];
+  links.forEach(function(a){
+    var id = a.getAttribute('href');
+    if(id && id.charAt(0) === '#'){
+      var el = document.querySelector(id);
+      if(el) sections.push({link:a, el:el});
+    }
+  });
+  if(!sections.length || !('IntersectionObserver' in window)) return;
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        sections.forEach(function(s){
+          s.link.classList.toggle('active', s.el === entry.target);
+        });
+      }
+    });
+  }, {rootMargin:'-45% 0px -50% 0px', threshold:0});
+  sections.forEach(function(s){ observer.observe(s.el); });
+})();
+</script>
+
+</body>
+                </html>
